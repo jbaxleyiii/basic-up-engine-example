@@ -1,0 +1,12 @@
+{
+  "name": "graphql-example-with-engine",
+  "lambda": {
+    "memory": 512
+  },
+  "hooks": {
+    "build": "NODE_ENV=production npx rollup -c",
+    "clean": "rm app.js"
+  },
+  "cors": { "enable": true },
+  "proxy": { "command": "node app.js" }
+}
