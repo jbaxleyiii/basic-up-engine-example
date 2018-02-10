@@ -4,7 +4,7 @@ This is a simple GraphQL endpoint demoing using `Up` by Apex to deploy to AWS La
 
 ## Problems
 
-- Up uses stages with API gateway to manage releases. These are aliases within Lambda adding an extra splat on the ARN (i.e. `:development`) at the end. Currently Engine proxy spilts on the `:` and if their are not 7 values, it errors. With aliases, there are 8 so Engine dies using releases.
+- Up uses stages with API gateway to manage releases. These are aliases within Lambda adding an extra splat on the ARN (i.e. `:development`) at the end. Currently Engine proxy spilts on the `:` and if their are not 7 values, it errors. With aliases, there are 8 so Engine dies using releases. [issue](https://mdg.myjetbrains.com/youtrack/issue/ENG-462)
 - Engine does not currently support non GraphQL requests with Lambda. This means using GraphiQL or an auth check for private caching are not possible as they aren't GraphQL requests [Issue](https://mdg.myjetbrains.com/youtrack/issue/ENG-169)
 - For some reason the Introspection Query is failing? You can see the trace [Here](https://engine.apollographql.com/service/fargate-example?query=bf332d39d67513382366c09edc701cb3e917b42b&tab=traces&trace=5a7c4f4e.2d73bc6e0e46772d) and can verify the actual app supports it by running the same operation agains [this endpoint](https://penu5196yc.execute-api.us-east-1.amazonaws.com/development/). *Note* other operations including fragments work.
 
