@@ -7,10 +7,9 @@ import { schema } from "./schema";
 const PORT = process.env.PORT || 3000;
 const server = express();
 
-server.post("/", bodyParser.json(), graphqlExpress({ schema, tracing: true }));
+// allow for any url to be GraphQL since this is a lambda function
+server.post("*", bodyParser.json(), graphqlExpress({ schema, tracing: true }));
 
 server.listen(PORT, () => {
-  console.log(
-    `GraphQL Server is now running on http://localhost:${PORT}/graphql`
-  );
+  console.log(`GraphQL Server is now running on http://localhost:${PORT}`);
 });

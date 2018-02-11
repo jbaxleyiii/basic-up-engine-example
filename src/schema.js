@@ -25,6 +25,7 @@ type Query {
   droid(id: ID!): Droid
   human(id: ID!): Human
   starship(id: ID!): Starship
+  environment: String
 }
 # The mutation type, represents all updates we can make to our data
 type Mutation {
@@ -303,6 +304,7 @@ function fromCursor(str) {
 
 const resolvers = {
   Query: {
+    environment: () => process.env.UP_STAGE || "local",
     hero: (root, { episode }) => getHero(episode),
     character: (root, { id }) => getCharacter(id),
     human: (root, { id }) => getHuman(id),
