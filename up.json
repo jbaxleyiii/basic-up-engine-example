@@ -1,5 +1,5 @@
 {
-  "name": "graphql-example-with-engine",
+  "name": "star-wars",
   "lambda": {
     "memory": 512
   },
