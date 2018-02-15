@@ -41,7 +41,7 @@ This is a simple GraphQL endpoint demoing using `Up` by Apex to deploy to AWS La
 10. Choose `custom` and enter the following information:
 ```
 Container Name: Engine
-Image: gcr.io/mdg-public/engine:2018.02-37-g678cbb68b
+Image: gcr.io/mdg-public/engine:2018.02-50-gef2fc6d4e
 Port Mappings: 80 / TCP
 Advanced:
   Env Variables:
