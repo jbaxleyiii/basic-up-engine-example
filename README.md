@@ -31,7 +31,7 @@ This is a simple GraphQL endpoint demoing using `Up` by Apex to deploy to AWS La
     {
       "host": "0.0.0.0",
       "port": 80,
-      "endpoints": ["/", "/development", "/staging", "/production"]
+      "endpoints": ["/graphql", "/staging/graphql", "/production/graphql"]
     }
   ]
 }
