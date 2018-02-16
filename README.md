@@ -34,16 +34,16 @@ This is a simple GraphQL endpoint demoing using `Up` by Apex to deploy to AWS La
 7. Stringify this so it can be used with Fargate (*hint* in chrome you can run `copy(JSON.stringify(<the above json>))` to copy it to your clipboard). It is worth saving this somewhere for future ease of use.
 8. Go to [this link](https://console.aws.amazon.com/ecs/home?region=us-east-1#/firstRun) to start using Fargate for a service
 9. Choose `custom` and enter the following information:
-```
-Container Name: Engine
-Image: gcr.io/mdg-public/engine:2018.02-50-gef2fc6d4e
-Port Mappings: 80 / TCP
-Advanced:
-  Env Variables:
-    ENGINE_CONFIG: <the stringified JSON from above>
+    ```
+    Container Name: Engine
+    Image: gcr.io/mdg-public/engine:2018.02-50-gef2fc6d4e
+    Port Mappings: 80 / TCP
+    Advanced:
+      Env Variables:
+        ENGINE_CONFIG: <the stringified JSON from above>
 
-```
-Then click Update.
+    ```
+    Then click Update.
 10. Edit the task definition to set name to be engine-proxy and click next
 11. Choose ALB (Application Load Balancer) and click next
 12. Set cluster name to Engine and click next
@@ -53,11 +53,11 @@ Then click Update.
 16. Click back to Description and click the Load Balancer link
 17. Copy the DNS name, and go to it in your web browser. You may get a "503 Service Temporarily Unavailable" error while the service is still starting up; if so, give it a few minutes.
 18. Paste this query and hit go:
-```graphql
-query Test {
-  hero(episode:NEWHOPE){
-    name
-  }
-}
-```
+    ```graphql
+    query Test {
+      hero(episode:NEWHOPE){
+        name
+      }
+    }
+    ```
 19. Profit (or replicate the above bugs)
